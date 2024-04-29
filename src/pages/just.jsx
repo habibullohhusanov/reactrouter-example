@@ -3,20 +3,41 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import About from '../components/about';
 import Home from '../components/home';
 import Navbar from '../components/just/navbar';
+import Main from '../components/main';
+import ErrPage from '../components/just/errPage';
 
 function Just() {
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <Navbar />
+            element: <Navbar />,
+            errorElement: <ErrPage to="/" />,
+            children: [
+                {
+                    index: true,
+                    element: <Main />
+                }
+            ]
         },
         {
             path: "/about",
-            element: <About />,
+            element: <Navbar />,
+            children: [
+                {
+                    index: true,
+                    element: <About />
+                }
+            ]
         },
         {
             path: "/home",
-            element: <Home />
+            element: <Navbar />,
+            children: [
+                {
+                    index: true,
+                    element: <Home />
+                }
+            ]
         }
     ]);
     return (
