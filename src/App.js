@@ -1,13 +1,15 @@
-import { BrowserRouter } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
 // import With from "./pages/with";
 import Just from "./pages/just";
 // import Without from "./pages/without";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
+      {/* <BrowserRouter> */}
       <Just />
-    </BrowserRouter>
+      {/* </BrowserRouter> */}
+    </>
   );
 }
 
